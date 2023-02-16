@@ -30,7 +30,7 @@ spec:
 
       containers:
         - name: jenkins
-          image: daviddeif/jenkins_with_gcloud
+          image: daviddeif/jenkins_with_gcloud:v1
           imagePullPolicy: IfNotPresent
           ports:
             - name: httpport

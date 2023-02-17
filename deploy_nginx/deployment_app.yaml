@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ngnix_david
+  namespace: webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ngnix_david
+  template:
+    metadata:
+      labels:
+        app: ngnix_david
+    spec:
+      containers:
+        - name: ngnix_david
+          image: daviddeif/ngnix:vtag
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: httpport
+              containerPort: 80
+              protocol: TCP
+
+
+        

@@ -23,9 +23,9 @@ pipeline {
                     sh """
                         gcloud auth activate-service-account --key-file=${config}   
                         gcloud container clusters get-credentials private-cluster --region europe-west1 --project david-emad-project  
-                        sed -i 's/tag/${BUILD_NUMBER}/g' deploy_nginx/deployment_app.yaml
-                        kubectl apply -f deploy_nginx/namespace.yaml
-                        kubectl apply -Rf deploy_nginx
+                        sed -i 's/tag/${BUILD_NUMBER}/g' deployed_app(nginx)/deployment_app.yaml
+                        kubectl apply -f deployed_app(nginx)/namespace.yaml
+                        kubectl apply -f deployed_app(nginx)
 
                     """
                 }

@@ -2,7 +2,7 @@ pipeline {
     agent any
     enviroment {
           YOUR_CRED = credentials('dockerhub')
-    }
+     }
     stages {
 
         stage('CI'){

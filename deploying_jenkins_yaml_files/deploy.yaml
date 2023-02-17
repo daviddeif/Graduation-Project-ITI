@@ -58,9 +58,8 @@ spec:
         
       volumes:
         - name: jenkins-data
-          emptyDir: {}
-          # persistentVolumeClaim:
-          #   claimName: task-pv-claim
+          persistentVolumeClaim:
+           claimName: pvc-demo
 
         - name: docker
           emptyDir: {}

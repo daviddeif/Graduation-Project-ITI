@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ngnix_david
+  name: nginxdavid
   namespace: webserver
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ngnix_david
+      app: nginxdavid
   template:
     metadata:
       labels:
-        app: ngnix_david
+        app: nginxdavid
     spec:
       containers:
-        - name: ngnix_david
+        - name: nginxdavid
           image: daviddeif/nginx:vtag
           imagePullPolicy: IfNotPresent
           ports:
